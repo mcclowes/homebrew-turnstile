@@ -3,10 +3,12 @@
 Homebrew tap for [turnstile](https://github.com/mcclowes/turnstile), the machine-wide, memory-aware gate for builds and tests.
 
 ```bash
-brew install mcclowes/turnstile/turnstile             # CLI only
-brew install --cask mcclowes/turnstile/turnstile-app  # CLI + menu bar app
+brew install mcclowes/turnstile/turnstile                                # CLI only
+brew install mcclowes/turnstile/turnstile mcclowes/turnstile/turnstile-app  # CLI + menu bar app
 turnstile init
 ```
+
+Name the formula alongside the app: Homebrew only trusts third-party formulae you name, so `brew install --cask mcclowes/turnstile/turnstile-app` on its own refuses to load the CLI it depends on, unless you've run `brew trust mcclowes/turnstile`.
 
 The CLI is the product. The menu bar app is a view onto its daemon, so the cask depends on the formula rather than bundling its own copy. Uninstalling the app leaves the CLI in place.
 
