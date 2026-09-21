@@ -1,6 +1,6 @@
 cask "turnstile-app" do
-  version "0.4.0"
-  sha256 "77587a1d06a41b74e212d91520a2b7e5048249d094993b011d941055fb27f45f"
+  version "0.5.0"
+  sha256 "d02b49f23372256310f09459868491d33175713126bc6e9e54b3f67d7cf46f69"
 
   url "https://github.com/mcclowes/homebrew-turnstile/releases/download/v#{version}/Turnstile-#{version}.zip"
   name "Turnstile"
