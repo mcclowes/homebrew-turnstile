@@ -1,8 +1,8 @@
 class Turnstile < Formula
   desc "Machine-wide, memory-aware gate for builds and tests on macOS"
   homepage "https://github.com/mcclowes/turnstile"
-  url "https://github.com/mcclowes/homebrew-turnstile/releases/download/v0.8.0/turnstile-0.8.0-macos.tar.gz"
-  sha256 "912203fc0350bf94582ead74e68695dd74876c54215c96b9eb3f400318b746b2"
+  url "https://github.com/mcclowes/homebrew-turnstile/releases/download/v0.8.1/turnstile-0.8.1-macos.tar.gz"
+  sha256 "ac17d18781373b760d1f2353a76d9a3b753807d40983f9e756ccbe9b5aa8061c"
   license "MIT"
 
   depends_on :macos
