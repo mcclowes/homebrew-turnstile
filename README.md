@@ -12,4 +12,4 @@ Name the formula alongside the app: Homebrew only trusts third-party formulae yo
 
 The CLI is the product. The menu bar app is a view onto its daemon, so the cask depends on the formula rather than bundling its own copy. Uninstalling the app leaves the CLI in place.
 
-Requires macOS 13 (Ventura) or later, on Apple Silicon or Intel. The app is signed and notarized. Both files are updated by turnstile's `scripts/release.sh`.
+Requires macOS 26 (Tahoe) or later, on Apple silicon or Intel. The app is signed and notarized. Both files are updated by turnstile's `scripts/release.sh`.

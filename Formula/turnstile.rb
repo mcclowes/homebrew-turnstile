@@ -5,7 +5,7 @@ class Turnstile < Formula
   sha256 "d8677cef079a012eba17a4e548193025ed1c5187e68f7d4be95940bb58387029"
   license "MIT"
 
-  depends_on :macos
+  depends_on macos: :tahoe
 
   def install
     bin.install "turnstile"
