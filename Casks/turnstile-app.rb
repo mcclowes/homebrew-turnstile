@@ -8,7 +8,7 @@ cask "turnstile-app" do
   homepage "https://github.com/mcclowes/turnstile"
 
   depends_on formula: "mcclowes/turnstile/turnstile"
-  depends_on macos: :ventura
+  depends_on macos: :tahoe
 
   app "Turnstile.app"
 

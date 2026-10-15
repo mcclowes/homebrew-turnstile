@@ -1,0 +1,35 @@
+name: Check Turnstile packages
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: turnstile-tap-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  packages:
+    name: Package checks
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - name: Set up stable Homebrew and the current tap checkout
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
+        with:
+          stable: true
+      - name: Check formula and cask style
+        run: brew style Formula/turnstile.rb Casks/turnstile-app.rb
+      - name: Audit the formula
+        run: brew audit --strict mcclowes/turnstile/turnstile
+      - name: Audit the app cask
+        run: brew audit --cask --strict mcclowes/turnstile/turnstile-app
+      - name: Install and verify the CLI archive
+        run: brew install mcclowes/turnstile/turnstile
+      - name: Test the installed CLI version
+        run: brew test mcclowes/turnstile/turnstile
+      - name: Fetch and verify the app archive checksum
+        run: brew fetch --cask mcclowes/turnstile/turnstile-app
